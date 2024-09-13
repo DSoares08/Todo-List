@@ -3,13 +3,16 @@ import { useAuth } from '../context/AuthContext'
 import TodoCard from './TodoCard'
 import { doc, setDoc } from 'firebase/firestore'
 import { db } from '../firebase'
+import useFetchTodos from '../hooks/fetchTodos'
 
 export default function UserDashboard() {
   const { userInfo, currentUser } = useAuth()
   const [addTodo, setAddTodo] = useState(false)
   const [todo, setTodo] = useState('')
-  const [todoList, setTodoList] = useState({})
-  console.log(todoList)
+
+  const { todos, loading, error } = useFetchTodos()
+
+  console.log(todos)
 
   // useEffect(() => {
   //   if (!userInfo || Object.keys(userInfo).length === 0) {
@@ -36,12 +39,15 @@ export default function UserDashboard() {
         <input type='text' placeholder="Enter todo" value={todo} onChange={(e) => setTodo(e.target.value)} className='outline-none white p-3 text-base sm:text-lg text-slate-900 flex-1' />
         <button onClick={handleAddTodo} className='w-fit px-4 sm:px-6 py-2 sm:py-3 bg-amber-400 text-white text-base duration-300 hover:opacity-40'>ADD</button>
       </div>
-      {userInfo && (
+      {loading && (<div>
+
+      </div>)}
+      {(userInfo && !loading) && (
         <>
-          {Object.keys(todoList).map((todo, i) => {
+          {Object.keys(todos).map((todo, i) => {
             return (
               <TodoCard key={i}>
-                {todoList[todo]}
+                {todos[todo]}
               </TodoCard>
             )
           })}
