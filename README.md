@@ -1,6 +1,6 @@
-# Todo-List
+# Todo List
 
-A simple and minimal todo list application. It allows the user to register and login. In the dashboard, the user can create, update, and delete tasks.
+[](todoey) is a simple and minimal todo list application. It allows the user to register and login. In the dashboard, the user can create, update, and delete tasks.
 
 ## Problem
 
