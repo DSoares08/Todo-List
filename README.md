@@ -1,40 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo-List
 
-## Getting Started
+A simple and minimal todo list application. It allows the user to register and login. In the dashboard, the user can create, update, and delete tasks.
 
-First, run the development server:
+## Problem
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Most todo list applications have excessive tools which can distract the actual purpose. The goal was to make something simple for people to use.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Steps
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Firstly, the login UI and logic was created. In order to persist the user information I used a firebase database. Later, the dashboard was made along with the CRUD functionality. There is a component for individual todos and a hook method to fetch them.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Decisions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The main decision was to choose a font that is appealing to the eye and suitable for the app. For that, I chose one from Google fonts.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Icons also needed to be picked to fit with the overall design of the app.
 
-## Learn More
+## Summary
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In conclusion, this project was a great way to familiarize myself with full-stack using React.
